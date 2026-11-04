@@ -4,7 +4,7 @@
 const { chromium } = require('playwright');
 const fs = require('fs');
 const SHOTS = process.argv[2];
-const URL = 'http://localhost:4173/';
+const URL = process.env.APP_URL || 'http://localhost:4173/';
 let fails = 0;
 const check = (name, ok, extra = '') => { console.log(`${ok ? 'PASS' : 'FAIL'}  ${name}${extra ? '  → ' + extra : ''}`); if (!ok) fails++; };
 
